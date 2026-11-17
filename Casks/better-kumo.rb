@@ -12,14 +12,9 @@ cask "better-kumo" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Better Kumo.app"
-
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Better Kumo.app"]
-  end
 
   uninstall quit: "com.kravtsov.kumowatch.desktop"
 
@@ -30,7 +25,8 @@ cask "better-kumo" do
   ]
 
   caveats <<~EOS
-    Better Kumo is not notarized by Apple; this cask removes the quarantine flag so it opens normally.
-    Start it from Applications, then turn on "Start at login" in its menu bar menu.
+    Better Kumo is not notarized by Apple. The first time, open it from Applications, then allow it in
+    System Settings → Privacy & Security → Open Anyway (or right-click it → Open).
+    Then turn on "Start at login" in its menu bar menu.
   EOS
 end
