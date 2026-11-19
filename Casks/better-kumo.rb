@@ -1,6 +1,6 @@
 cask "better-kumo" do
-  version "0.1.1"
-  sha256 "d0fd41efa5619b56d4df02bcfcb930b7276611b9da35ae6bf7977068aae5c5ca"
+  version "0.2.0"
+  sha256 "ca946516a33539ea9113a40491018ea19389fcb071de3a40c5a6a5cf9936342d"
 
   url "https://github.com/IgorKravtsov/better-kumo-app/releases/download/v#{version}/Better-Kumo-macOS-#{version}.zip"
   name "Better Kumo"
@@ -15,12 +15,14 @@ cask "better-kumo" do
   depends_on macos: :ventura
 
   app "Better Kumo.app"
+  binary "#{appdir}/Better Kumo.app/Contents/MacOS/kumo-mcp"
 
   uninstall quit: "com.kravtsov.kumowatch.desktop"
 
   zap trash: [
     "~/.config/kumowatch/relay.toml",
     "~/.local/share/kumowatch-relay",
+    "~/.local/share/kumowatch-mcp",
     "~/Library/Logs/kumowatch",
   ]
 
