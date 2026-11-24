@@ -1,6 +1,6 @@
 cask "better-kumo" do
-  version "0.2.5"
-  sha256 "674dd791809d31144ed3b46a5bc4875ef7ac310a9ebfd0f0f702d56b72c31a89"
+  version "0.2.6"
+  sha256 "2bff01d1c0d9b30e853a82238639cce242517944a76fb4dbf75853823a9a2934"
 
   url "https://github.com/IgorKravtsov/better-kumo-app/releases/download/v#{version}/Better-Kumo-macOS-#{version}.zip"
   name "Better Kumo"
@@ -12,6 +12,7 @@ cask "better-kumo" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: :ventura
 
   app "Better Kumo.app"
