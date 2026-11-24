@@ -1,6 +1,6 @@
 cask "better-kumo" do
-  version "0.2.7"
-  sha256 "752a01557c9238b3f0c5f1f70d62c7d4b5353b797ba907abf8cff699216384ec"
+  version "0.2.8"
+  sha256 "a6cc0b0c14e52b575e9c185c4ea866b618c534c772984bf84edab50a1d51e81a"
 
   url "https://github.com/IgorKravtsov/better-kumo-app/releases/download/v#{version}/Better-Kumo-macOS-#{version}.zip"
   name "Better Kumo"
